@@ -229,7 +229,7 @@ class UserView:
             return Response(data, status=status.HTTP_200_OK)
         else:
             return Response(
-                {"message": "wrong email or password"},
+                {"message": "Incorrect email or password"},
                 status=status.HTTP_401_UNAUTHORIZED,
             )
 

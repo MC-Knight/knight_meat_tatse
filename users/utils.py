@@ -5,7 +5,7 @@ from django.template.loader import get_template
 
 def send_verification_email(email, pk, token):
     try:
-        subject = "welcome to Mentor [Update]"
+        subject = "welcome to Knight Meat Taste [Update]"
         message = "Hello"
         email_from = f"{settings.DISPLAY_NAME} <settings.EMAIL_HOST_USER>"
         recipient_list = [
@@ -14,7 +14,7 @@ def send_verification_email(email, pk, token):
         html_c = get_template("mail.html")
         context = {
             "token": token,
-            "url": f"{settings.CLIENT_URL}/account/verify-email/{token}/",
+            "url": f"{settings.CLIENT_URL}/account/verify-email/{pk}/{token}/",
         }
         html_content = html_c.render(context)
         # headers = {'X-Auto-Response-Suppress': 'Update',
